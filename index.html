@@ -34,7 +34,7 @@
 <body id="fullsingle" class="page-template-page-fullsingle-split">
 
 <div class="fs-split">
-
+    
 	<!-- Content Side -->
 	<div class="split-content">
 
@@ -44,14 +44,11 @@
 				
 			  <h1>Fabrice Croiseaux</h1>
 
-				<span class="tagline">CEO InTech. Advisor. Evangelist.</span>
+				<span class="tagline" id="tagline"></span>
 
 			</div>
 
-			<div class="split-bio">
-			  <p>Graduate of Centrale Lyon and HEC, Fabrice is CEO of InTech, a subsidiary of POST Luxembourg Group specialised in Information Technology consulting and specific software development.</p>
-			  <p>Passionate about digital culture and innovation, he advises companies in the use of emerging technologies to create breakthrough innovations. He is the leader of the Blockchain working group of the Fédération des Tiers de Confiance Numérique and Chairman of the Board of Infrachain in Luxembourg. Fabrice participates in several large-scale projects based on blockchain technology in France and Luxembourg.<br>
-		      </p>
+			<div class="split-bio" id="split_bio">
 			</div>
 
 			<div class="split-lists">
@@ -97,6 +94,18 @@
 
 	</div>
 </div>
-
 </body>
+    <script type="text/javascript">
+        window.onload = function (){ 
+        var language = window.navigator.userLanguage || window.navigator.language;
+        var tagline = "CEO InTech. Advisor. Evangelist.";
+        var split_bio = "<p>A graduate of Centrale Lyon and HEC, Fabrice Croiseaux began his professional career at Banque Générale du Luxembourg in 1992. He joined InTech in 1998 to support the company's development. In 2011, he becomes CEO of InTech, which today has nearly 150 engineers specialised in Information System consulting and specific application development. Passionate about digital culture and innovation, he supports companies and public authorities in the use of emerging technologies to create breakthrough innovations.</p><p>He is Chairman of the Board of Directors of Infrachain, Chairman of the Board of Directors of Telecom Nancy, director of Earthlab, independent director of EASE, director of Tokeny and head of the Blockchain working group of the Fédération des Tiers de Confiance Numérique in Paris.<br></p>";
+        if (language.substring(0,2).toLowerCase() === 'fr') {
+			var tagline = "Directeur Général de InTech. Stratégie. Technologies.";
+        	var split_bio = "<p>Diplômé de Centrale Lyon et de HEC, Fabrice Croiseaux a commencé sa carrière professionnelle à la Banque Générale du Luxembourg en 1992. Il rejoint InTech en 1998 pour accompagner le développement de l'entreprise. En 2011, il devient CEO de InTech qui compte aujourd'hui près de 150 ingénieurs spécialisés dans le conseil en Système d'Information et en développement d'applications spécifiques. Passionné de culture numérique et d'innovation, il accompagne les entreprises et les administrations dans l'utilisation de technologies émergentes pour créer des innovations de rupture.</p><p>Il est président du conseil d'administration de Infrachain, président du conseil d’administration de Telecom Nancy, administrateur de Earthlab, administrateur indépendant de la société EASE, administrateur de Tokeny et responsable du groupe de travail Blockchain de la Fédération des Tiers de Confiance Numérique à Paris.<br></p>";
+		};
+		document.getElementById("tagline").innerHTML = tagline;
+        document.getElementById("split_bio").innerHTML = split_bio;    
+        };
+    </script>
 </html>
